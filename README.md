@@ -21,10 +21,10 @@ olvi '@' cs.wisc.edu
 Nick Street
 
 ## Group Member
-Kewei Chen; 
-David Wang; 
 Jianhong Zhang; 
 Stephen Ho; 
+Kewei Chen; 
+David Wang; 
 
 ## 1. Data Preparation and Pre-prediction Exploratory Data Analysis
 a. Explore Data
