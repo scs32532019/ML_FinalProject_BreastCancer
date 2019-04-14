@@ -21,108 +21,44 @@ olvi '@' cs.wisc.edu
 Nick Street
 
 ## Group Member
-Jianhong Zhang; 
-Stephen Ho; 
-Kewei Chen; 
-David Wang; 
+Jianhong Zhang;  
+Stephen Ho;  
+Kewei Chen;  
+David Wang;  
 
 
-## Getting Started
+## Prerequisites
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+Python 3 is required and a series of Python packages
 
 ```
-Give examples
+Python 3 can be downloaded from here: https://www.python.org
+Python packages can be installed in various different ways. One of the simple ones is using Anaconda where some of the frequently used Python packages are installed as part of the installation of Anaconda. https://www.anaconda.com
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
 ## 1. Data Preparation and Pre-prediction Exploratory Data Analysis
-a. Explore Data
-b. Find statistics
-c. Dimensionality reduction using PCA
-b. Apply cluster analysis (k-Means and DBSCAN)
+The data we selected is computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. The goal is to use this data to predict whether the tumor is cancerous (Malignant) or not (Benign).  
 
-2. Pipeline
-a. Classification/Regression using k-NN , SVM, Random Forest (and their variations)
-b. Optimizing the hyperparameters (and other pipeline parameters)
-c. Compare the results of these 3 techniques with their different hyperparameters, and scoring metrics. Explain your scoring metric.
-d. Find best feature engineering approach (Dimensionality reduction using PCA)
-e. (bonus mark): Compare the results by applying a deep neural network algorithm
+This is a typical classification problem.  
+
+We loaded the data and did some basic checks which includes:  
+
+a. initial data scaning to understand the structure  
+b. some basic statiscal check to spot any potential data issue  
+c. added the necessary data columns and created a dataframe  
+d. changed the categorical name (M/B) to categorical code (1/0)  
+e. used seaborn charts to scan through the relationships between these data features as well as their relationship to categorical results (diaganosis results)  
+
+
+## 2. Apply Classification and Plot the ROC
+
+Since this is a classification problem (predict whether a tumor is cancerous or not), various different classification techniques from sikit learn can be used. We tried a few different ones (KNN, SVM, Random Forest, LogisticRegression, etc) and we found SVM produces better results.
+
+In this exerciese, we also used 5 fold cross valiation to find the best parameters.
+Another technique we employed is adding noise. Adding noise expands the size of the training dataset. Each time a training sample is exposed to the model, random noise is added to the input variables making them different every time when it's exposed to the model. This makes the training process more robust and reduce generalization error.
+
+
+## 3. 
 
 3. Conclusions and Recommendations
 a. Visualizing the data and results 
