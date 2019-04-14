@@ -58,37 +58,29 @@ In this exerciese, we also used 5 fold cross valiation to find the best paramete
 Another technique we employed is adding noise. Adding noise expands the size of the training dataset. Each time a training sample is exposed to the model, random noise is added to the input variables making them different every time when it's exposed to the model. This makes the training process more robust and reduce generalization error.
 
 
-## 3. 
+## 3. Feature Selection
 
-3. Conclusions and Recommendations
-a. Visualizing the data and results 
-b. Recommend your future steps for improving the resuls
-c. Apply cluster analysis (k-Means and DBSCAN)
+This ranks the importance of each feature using Decision Tree Regressor.
+We found 'perimeter_worst' feature is the most important one. This feature is the mean of the three largest tumor perimeter values. The bigger the tumor, the greater the risk that it is cancerous.
 
+We also plot the ROC using only the selected important features for training. Comparing the result with the previous one, it shows just a little improvement.
 
-Data Preparation and Pre-prediction Analysis (Exploratory Data Analysis) 
+## 4. Create a Confusion Matrix using the Testing Dataset
 
-The first and foremost step of data mining process is to understand the data and identify the research question(s). Here are some suggestions to explore and understand datasets:
+## 5. Apply PCA
 
-Look at the attribute type; e.g., categorical, ordinal or quantitative.
-Find max, min, mean and standard deviation of attributes.
-Determine any outlier values (records) for each of the attributes or attributes under
-consideration (min, max, std. dev, scatter plots, box plots or others can be used).
-Analyze the distribution of numeric attributes (normal or other). 
-Plot histograms for attributes of concern and analyze whether they have any influence on the class
-Try to answer these questions by different visualization techniques:
-Which attributes seem to be most linked to the class attribute?
-Which attributes seem to be most linked to the class attribute?
-Which attributes do you think can be eliminated or included in the analysis?
-Determine whether the dataset has an imbalanced class distribution (same
-proportion of records of different types or not).
- Predictive Modeling
-After an overall understanding about the dataset, you can use classification algorithms/ Also, choose a classification algorithm of your own choice, explain it a at a high level and compare your results
-You will predict the class attribute by using each classification algorithm
-Determine the right strategy for dataset split: simple training or testing, 10-fold cross validation, 3-fold cross validation, predictive model hyperparameters, etc
-Use the dimensionality reduction algorithms in the preprocessing step and make
-Determine your performance measures (accuracy, precision, recall, etc.).
-Identify which algorithm performs well and in which settings.
+We applied the PCA and created a new dataframe. We then used SGD classifier on the newly created dataframe. GridsearchCV is used to find the best parameters that explain the training dataset. (including the ideal number of PCA components)
+
+Further more, we explored the top 3 principle components.
+We graphed these principle components with Malignant / Benign values show which principle component is more important to determine whether the tumore is Malignant or Benign.
+
+## 6. Visualising high-dimensional datasets t-SNE (t-distributed Stochastic Neighbor Embedding)
+
+Just for fun, we employed t-SNE technique to see how it can visually cluster the data. 
+t-SNE takes the high dimentional dataset and reduces it to low dimentional graph but retains a lot of the original information.
+
+## 7. Create Neural Network (Keras)
+
 	
 
  Conclusions and Recommendations
