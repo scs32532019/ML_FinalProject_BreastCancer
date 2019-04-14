@@ -81,12 +81,18 @@ t-SNE takes the high dimentional dataset and reduces it to low dimentional graph
 
 ## 7. Create Neural Network (Keras)
 
+First of all, we created a plotting function that can plot the loss/accuracy against the number of epochs on the training and validation dataset. This works similar as tensor board.
+
+We then created a Sequential netwrok with 5 layers (input/output + 3 hidden layers). Another feature we added is 'dropout' which can help adjust weights to avoid over fitting and reduce running time.
 	
+In the end, we compared the Keras prediction results with the SVM results using ROC. It shows the Keras result is slightly better.
 
- Conclusions and Recommendations
-State your major findings from different sections. 
-State your recommendation to the company that they can put into place to solve their problem.
-Recommend the improvement techniques for better prediction results
+## Conclusions and Recommendations
 
-Datasets
-Provide the dataset link in the Google sheet shared with you and write the title and short description of the project there. Please inform your instructor and CC the teammates about it. One of you in the group should send the email.
+We found the size of the tumor is the most important deterministic factor to conclude whethter the tumor is Malignant or Benign. Both Keras and SVM have been performing well to predict whether the tumor is cancerous or not. (with Keras being slightly better)
+
+In this exercise, we found adding noise generally helps the training process. 
+
+This dataset only has 568 samples, a larger amount of samples could help with better prediction results. This classification technique (either neural network or sikitlearn) can be employed to analyze the tumor once standard data collection, cleaning pipeline is established. 
+
+
