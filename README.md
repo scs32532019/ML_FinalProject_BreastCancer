@@ -93,6 +93,6 @@ We found the size of the tumor is the most important deterministic factor to con
 
 In this exercise, we found adding noise generally helps the training process. 
 
-This dataset only has 568 samples, a larger amount of samples could help with better prediction results. This classification technique (either neural network or sikitlearn) can be employed to analyze the tumor once standard data collection, cleaning pipeline is established. 
+This dataset only has 568 samples, a larger amount of samples could help with better prediction results. This classification technique (either neural network or scikitlearn) can be employed to analyze the tumor once standard data collection, cleaning pipeline is established. 
 
 
