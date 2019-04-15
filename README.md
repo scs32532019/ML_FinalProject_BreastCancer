@@ -26,6 +26,7 @@ Stephen Ho;
 Kewei Chen;  
 David Wang;  
 
+[![Marchine Learning Class Final Project](http://img.youtube.com/vi/5Mh3oncrcjM/0.jpg)](http://www.youtube.com/watch?v=5Mh3oncrcjM "Marchine Learning Class Final Project")
 
 ## Prerequisites
 
